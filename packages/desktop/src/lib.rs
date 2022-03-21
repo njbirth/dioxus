@@ -179,7 +179,7 @@ pub fn launch_with_props<P: 'static + Send>(
 
                 if cfg.disable_context_menu {
                     // in release mode, we don't want to show the dev tool or reload menus
-                    webview = webview.with_initialization_script(
+                    /*webview = webview.with_initialization_script(
                         r#"
                         if (document.addEventListener) {
                         document.addEventListener('contextmenu', function(e) {
@@ -193,7 +193,7 @@ pub fn launch_with_props<P: 'static + Send>(
                         });
                         }
                     "#,
-                    )
+                    )*/
                 } else {
                     // in debug, we are okay with the reload menu showing and dev tool
                     webview = webview.with_dev_tool(true);
